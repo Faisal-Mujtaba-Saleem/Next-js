@@ -19,8 +19,6 @@ const fetchPosts = async (url) => {
         let { posts, total_posts } = await res.json();
         if (!posts || !Array.isArray(posts) || !posts?.length) throw new Error('No posts found');
 
-        console.log(posts);
-
         return { posts, total_posts };
 
     } catch (error) {
@@ -28,7 +26,7 @@ const fetchPosts = async (url) => {
     }
 };
 
-const blog = () => {
+const Page = () => {
     const { blogposts, setBlogposts } = useContext(PostsContext);
 
     const [error, setError] = useState(null);
@@ -88,4 +86,4 @@ const blog = () => {
     );
 }
 
-export default blog;
+export default Page;

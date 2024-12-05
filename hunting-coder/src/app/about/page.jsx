@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { ReactTyped } from "react-typed";
 
-const page = () => {
+const Page = () => {
     const [showTypedText, setShowTypedText] = useState(true);
     useEffect(() => {
         setTimeout(() => {
@@ -116,4 +116,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

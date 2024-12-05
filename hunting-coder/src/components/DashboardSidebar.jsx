@@ -22,16 +22,14 @@ const DashboardSidebar = () => {
                     <header id="user-profile-heading" className="sr-only">
                         User Profile
                     </header>
-                    <div className="flex flex-col items-center text-center py-4">
+                    <div className="flex flex-col items-center text-center pt-10 pb-4">
                         {session?.user && author ? (
                             <>
                                 <div className="relative w-20 h-20">
                                     <Image
                                         src={author?.image}
                                         fill
-                                        sizes="(max-width: 768px) 100vw,
-                                    (max-width: 1200px) 50vw,
-                                    33vw"
+                                        sizes="100%"
                                         alt={`${author?.name}'s Profile Picture`}
                                         className="rounded-full ring-4 ring-gray-300"
                                     />

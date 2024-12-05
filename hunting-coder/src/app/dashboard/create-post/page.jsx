@@ -7,7 +7,7 @@ import { useSession } from 'next-auth/react';
 import { createPostAction } from '@/app/actions/createPostAction';
 import { PostsContext } from '@/contexts/posts-context/context';
 
-const createPost = () => {
+const Page = () => {
     const { data: session } = useSession();
 
     const { postContent, setPostContent } = useContext(PostsContext);
@@ -144,4 +144,4 @@ const createPost = () => {
 
 };
 
-export default createPost;
+export default Page;

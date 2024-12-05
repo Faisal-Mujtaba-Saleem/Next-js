@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import SignIn from '@/components/SignIn';
 import AuthorProfile from '@/components/AuthorProfile';
 
-const dashboard = () => {
+const Page = () => {
     const { data: session } = useSession();
 
     const { author, authorFetchError } = useContext(AuthorContext);
@@ -34,5 +34,5 @@ const dashboard = () => {
     );
 };
 
-export default dashboard;
+export default Page;
 

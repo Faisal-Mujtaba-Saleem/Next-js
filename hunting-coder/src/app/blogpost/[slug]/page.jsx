@@ -2,10 +2,10 @@ import BlogArticle from '@/components/BlogArticle';
 import Loading from '@/components/Loading';
 import React from 'react'
 
-const blogpost = async ({ params }) => {
+const Page = async ({ params }) => {
     const { slug } = await params;
 
-    const fetchPost = async () => {
+    const FetchPost = async () => {
         try {
             const options = { method: 'GET' };
 
@@ -27,4 +27,4 @@ const blogpost = async ({ params }) => {
     );
 };
 
-export default blogpost;
+export default Page;

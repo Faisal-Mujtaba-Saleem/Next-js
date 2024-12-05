@@ -22,7 +22,7 @@ const fetchPosts = async (url, options) => {
     }
 };
 
-const posts = () => {
+const Page = () => {
     const { data: session } = useSession();
 
     const { blogposts, setBlogposts } = useContext(PostsContext);
@@ -134,4 +134,4 @@ const posts = () => {
     );
 };
 
-export default posts;
+export default Page;

@@ -23,7 +23,7 @@ const fetchPosts = async () => {
   }
 };
 
-export default function home() {
+export default function Page() {
   const { blogposts, setBlogposts } = useContext(PostsContext);
 
   const [error, setError] = useState(null);
