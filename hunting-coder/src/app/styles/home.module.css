@@ -1,0 +1,7 @@
+.post_details_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 1.5rem;
+    height: 100%;
+}

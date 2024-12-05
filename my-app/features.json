@@ -1,0 +1,106 @@
+{
+    "Next.js_Features": {
+        "Server-Side_Rendering": {
+            "description": "Renders pages on the server at request time, improving performance and SEO.",
+            "benefits": [
+                "Improved SEO",
+                "Faster initial page load"
+            ]
+        },
+        "Static_Site_Generation": {
+            "description": "Generates HTML at build time, allowing static pages to be served efficiently.",
+            "benefits": [
+                "Better performance",
+                "Can be used with CDN",
+                "Pre-rendered at build time"
+            ]
+        },
+        "API_Routes": {
+            "description": "Enables the creation of API endpoints directly within the Next.js application.",
+            "benefits": [
+                "No need for separate backend",
+                "Serverless function support"
+            ]
+        },
+        "Automatic_Code_Splitting": {
+            "description": "Automatically splits the code at the page level to reduce initial page load size.",
+            "benefits": [
+                "Smaller bundle sizes",
+                "Faster load times"
+            ]
+        },
+        "Dynamic_Routing": {
+            "description": "Enables dynamic routes based on filename patterns in the `pages` directory.",
+            "benefits": [
+                "Easier routing management",
+                "Dynamic pages without config"
+            ]
+        },
+        "Image_Optimization": {
+            "description": "Optimizes images on demand for faster load times and better performance.",
+            "benefits": [
+                "Responsive images",
+                "Lazy loading",
+                "Automatic resizing"
+            ]
+        },
+        "Fast_Refresh": {
+            "description": "Provides an improved development experience with instant updates as code changes.",
+            "benefits": [
+                "Real-time feedback",
+                "Faster development iteration"
+            ]
+        },
+        "File-based_Routing": {
+            "description": "Automatically creates routes based on the file structure within the `pages` directory.",
+            "benefits": [
+                "Simplified routing",
+                "No need for additional routing configuration"
+            ]
+        },
+        "CSS_and_SASS_Support": {
+            "description": "Built-in support for CSS and SASS modules, allowing scoped and modular styling.",
+            "benefits": [
+                "Modular CSS",
+                "Scoped styles",
+                "SASS support"
+            ]
+        },
+        "Incremental_Static_Regeneration": {
+            "description": "Updates static content in the background without rebuilding the entire site.",
+            "benefits": [
+                "Up-to-date content",
+                "Faster build times"
+            ]
+        },
+        "Built-in_TypeScript_Support": {
+            "description": "Seamless integration with TypeScript for type safety and better developer experience.",
+            "benefits": [
+                "Type checking",
+                "Better IDE support",
+                "Improved developer experience"
+            ]
+        },
+        "Middleware_Support": {
+            "description": "Allows executing code before a request is completed, for things like authentication and redirects.",
+            "benefits": [
+                "Flexible routing",
+                "Enhanced control over requests"
+            ]
+        },
+        "Hybrid_Rendering": {
+            "description": "Combines static generation and server-side rendering within the same application.",
+            "benefits": [
+                "Flexible rendering strategies",
+                "Use best approach per page"
+            ]
+        },
+        "Automatic_Image_Optimization": {
+            "description": "Optimizes images on-demand with automatic resizing, format conversion, and lazy loading.",
+            "benefits": [
+                "Smaller image sizes",
+                "Faster page loads"
+            ]
+        }
+    }
+}

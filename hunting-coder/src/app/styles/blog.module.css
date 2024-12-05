@@ -1,0 +1,19 @@
+.card-image {
+    width: 30%;
+    height: 16rem;
+    position: relative;
+}
+
+.post-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 0.25;
+}
+
+/* Applies styles when the viewport width is 768px or wider */
+@media screen and (max-width: 1024px) {
+    .card-image {
+        min-width: 100% !important;
+    }
+}
