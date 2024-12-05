@@ -16,8 +16,6 @@ import { Bounce, toast } from 'react-toastify';
 import BlogPostEditor from '@/components/BlogPostEditor';
 
 const EditPost = ({ post }) => {
-    if (!post) return null;
-
     const { author, ...post_ } = post;
 
     const { data: session } = useSession();

@@ -30,21 +30,23 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
+    if (blogposts) {
+      setIsLoading(true);
 
-    fetchPosts()
-      .then((posts) => {
-        if (posts) {
-          setBlogposts(posts);
-        }
-      })
-      .catch((err) => {
-        setError(err.message);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+      fetchPosts()
+        .then((posts) => {
+          if (posts) {
+            setBlogposts(posts);
+          }
+        })
+        .catch((err) => {
+          setError(err.message);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [blogposts]);
 
   return (
     error ?

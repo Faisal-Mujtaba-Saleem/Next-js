@@ -30,7 +30,7 @@ const Page = () => {
                         </span>
                     </h1>
                     <p className="mt-4 text-lg md:text-2xl font-light">
-                        "
+                        &quot;
                         {
                             showTypedText ?
                                 <ReactTyped
@@ -40,7 +40,7 @@ const Page = () => {
                                 /> :
                                 `A blog for hunting coders by a hunting coder.`
                         }
-                        "
+                        &quot;
                     </p>
                 </div>
                 <div className="absolute inset-0 bg-noise-pattern opacity-20 pointer-events-none"></div>

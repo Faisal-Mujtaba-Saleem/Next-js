@@ -23,7 +23,7 @@ const AppHeader = () => {
                 }
             </h1>
             <p className="text-lg">
-                "
+                &quot;
                 {
                     showTypedText ?
                         <ReactTyped
@@ -32,7 +32,7 @@ const AppHeader = () => {
                         /> :
                         "A blog for hunting coders by a hunting coder."
                 }
-                "
+                &quot;
             </p>
         </header>
     )
