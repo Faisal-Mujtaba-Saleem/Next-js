@@ -5,6 +5,11 @@ import DashboardSidebar from "@/components/DashboardSidebar";
 import { SessionProvider } from "next-auth/react";
 import { AuthorContextProvider } from '@/contexts/author-context/context';
 
+export const metadata = {
+    title: "Hunting Coder - Dashboard",
+    description: "Access your personalized dashboard on Hunting Coder! Manage your account, post blogs, and track your activity seamlessly. Join the tech-savvy community to share your coding knowledge and stay updated with the latest in programming",
+};
+
 export default function DashboardLayout({ children }) {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
 

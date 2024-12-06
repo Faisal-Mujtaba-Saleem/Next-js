@@ -105,3 +105,8 @@ const Page = () => {
 };
 
 export default Page;
+
+export const metadata = {
+    title: "Hunting Coder - Contact",
+    description: "Get in touch with us at Hunting Coder! Have questions, feedback, or collaboration ideas? Reach out through our contact page, and we'll connect with you to help grow our tech community.",
+};

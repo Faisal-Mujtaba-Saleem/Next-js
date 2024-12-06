@@ -117,3 +117,8 @@ const Page = () => {
 };
 
 export default Page;
+
+export const metadata = {
+    title: "Hunting Coder - About",
+    description: "Learn more about Hunting Coder – a platform dedicated to tech enthusiasts, coders, and programmers. Discover our mission, vision, and how we're empowering a community to share knowledge and grow in the tech industry.",
+};
