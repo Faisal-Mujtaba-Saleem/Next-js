@@ -18,12 +18,12 @@ const Page = () => {
                     </h2>
                     <p className="text-lg leading-relaxed text-center md:text-left">
                         Welcome to *Hunting Coder*, the ultimate destination for all
-                        coding enthusiasts. Whether you’re a beginner hunting for your
+                        coding enthusiasts. Whether you&#39;re a beginner hunting for your
                         first coding challenge or a seasoned coder sharpening your
                         skills, this is the place for you. Here, we share insightful
                         articles, tutorials, and tips that empower coders to achieve
-                        their full potential. As the saying goes, "A hunting coder
-                        never rests!" And that’s exactly the spirit of this blog.
+                        their full potential. As the saying goes, &quot;A hunting coder
+                        never rests!&quot; And that&#39;s exactly the spirit of this blog.
                     </p>
                     <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-10">
                         <div className="bg-background/100 shadow-lg p-6 rounded-lg hover:shadow-2xl dark:shadow-violet-900 transition-all">
