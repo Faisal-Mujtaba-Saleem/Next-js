@@ -26,11 +26,14 @@ const fetchPosts = async () => {
 export default function Page() {
   const { blogposts, setBlogposts } = useContext(PostContext);
 
+  const [blogpostsSettled, setBlogpostsSettled] = useState(false);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (blogposts) {
+    if (blogposts && !blogpostsSettled) {
+      setBlogpostsSettled(true);
+
       setIsLoading(true);
 
       fetchPosts()
@@ -60,7 +63,7 @@ export default function Page() {
 
               {
                 !isLoading ?
-                  <LatestPosts /> :
+                  <LatestPosts blogposts={blogposts} /> :
                   <Loading />
               }
             </section>

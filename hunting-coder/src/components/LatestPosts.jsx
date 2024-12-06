@@ -63,11 +63,11 @@ const LatestPosts = ({ blogposts }) => {
 
                             {/* Card Footer */}
                             <footer className="flex items-center p-6 border-t border-gray-100">
-                                {post.author.image && (
+                                {post?.author?.image && (
                                     <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 mr-3">
                                         <Image
-                                            src={post.author.image}
-                                            alt={post.author.name}
+                                            src={post?.author?.image}
+                                            alt={post?.author?.name}
                                             width={48}
                                             height={48}
                                             className="object-cover"
@@ -75,8 +75,8 @@ const LatestPosts = ({ blogposts }) => {
                                     </div>
                                 )}
                                 <div>
-                                    <p className="font-semibold">{post.author.name}</p>
-                                    <p className="text-sm">{post.author.role}</p>
+                                    <p className="font-semibold">{post?.author?.name}</p>
+                                    <p className="text-sm">{post?.author?.role}</p>
                                 </div>
                             </footer>
                         </article>

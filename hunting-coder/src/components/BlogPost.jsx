@@ -51,18 +51,18 @@ const BlogPost = ({ post, isAdmin = false }) => {
 
                 {/* Footer: Author Section */}
                 <footer className="mt-auto flex items-center space-x-4 pt-4 border-t border-gray-200">
-                    {post.author.image && (
+                    {post?.author?.image && (
                         <Image
-                            src={post.author.image}
-                            alt={post.author.name}
+                            src={post?.author?.image}
+                            alt={post?.author?.name}
                             width={40}
                             height={40}
                             className="rounded-full"
                         />
                     )}
                     <div>
-                        <p className="text-sm font-semibold">{post.author.name}</p>
-                        <p className="text-xs ">{post.author.role}</p>
+                        <p className="text-sm font-semibold">{post?.author?.name}</p>
+                        <p className="text-xs ">{post?.author?.role}</p>
                     </div>
                 </footer>
             </section>
