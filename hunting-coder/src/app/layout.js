@@ -12,7 +12,7 @@ import 'prism-themes/themes/prism-atom-dark.css';
 // Context Providers
 import { ThemeProvider } from "@/components/theme-provider";
 import { SessionProvider } from "next-auth/react";
-import { PostsContextProvider } from "@/contexts/posts-context/context";
+import { PostContextProvider } from "@/contexts/post-context/context";
 // Components
 import Navbar from "@/components/Navbar";
 import { ToastContainer } from "react-toastify";
@@ -46,11 +46,11 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <PostsContextProvider>
+            <PostContextProvider>
               <Navbar />
               <ToastContainer />
               {children}
-            </PostsContextProvider>
+            </PostContextProvider>
           </ThemeProvider>
         </SessionProvider>
       </body>

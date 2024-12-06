@@ -1,50 +1,14 @@
-"use client";
+import React from "react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { ReactTyped } from "react-typed";
+import AboutHeader from "@/components/AboutHeader";
 
 const Page = () => {
-    const [showTypedText, setShowTypedText] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setShowTypedText(false);
-        }, 3000);
-    })
     return (
         <main className="bg-background/100 min-h-screen">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-violet-900 to-indigo-600 text-white py-20 px-5 md:px-10">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold">
-                        Welcome to <span className="text-yellow-400">
-                            {
-                                <ReactTyped
-                                    strings={["Hunting Coder"]}
-                                    typeSpeed={60}
-                                    backSpeed={70}
-                                    backDelay={1500}
-                                    startDelay={1000}
-                                    loop
-                                />
-                            }
-                        </span>
-                    </h1>
-                    <p className="mt-4 text-lg md:text-2xl font-light">
-                        &quot;
-                        {
-                            showTypedText ?
-                                <ReactTyped
-                                    strings={[`A blog for hunting coders by a hunting coder.`]}
-                                    typeSpeed={40}
-                                    startDelay={1000}
-                                /> :
-                                `A blog for hunting coders by a hunting coder.`
-                        }
-                        &quot;
-                    </p>
-                </div>
-                <div className="absolute inset-0 bg-noise-pattern opacity-20 pointer-events-none"></div>
-            </section>
+            <header className="relative bg-gradient-to-r from-violet-900 to-indigo-600 text-white py-20 px-5 md:px-10">
+                <AboutHeader />
+            </header>
 
             {/* About Section */}
             <section className="py-16 px-5 md:px-10">

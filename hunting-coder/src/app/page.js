@@ -1,7 +1,7 @@
 "use client";
 import AppHeader from "@/components/AppHeader";
 import { useContext, useEffect, useState } from "react";
-import { PostsContext } from "@/contexts/posts-context/context";
+import { PostContext } from "@/contexts/post-context/context";
 import Loading from "@/components/Loading";
 import DisplayError from "@/components/DisplayError";
 import LatestPosts from "@/components/LatestPosts";
@@ -24,7 +24,7 @@ const fetchPosts = async () => {
 };
 
 export default function Page() {
-  const { blogposts, setBlogposts } = useContext(PostsContext);
+  const { blogposts, setBlogposts } = useContext(PostContext);
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

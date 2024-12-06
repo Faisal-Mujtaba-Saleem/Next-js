@@ -4,6 +4,7 @@ import { ReactTyped } from 'react-typed'
 
 const AppHeader = () => {
     const [showTypedText, setShowTypedText] = useState(true);
+
     useEffect(() => {
         setTimeout(() => {
             setShowTypedText(false);

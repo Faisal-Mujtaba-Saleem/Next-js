@@ -12,6 +12,8 @@ export async function GET(request) {
 
         const auth_response = await apiAuthenticationMiddleware(request);
 
+        const author_id = request.nextUrl.searchParams.get('author_id');
+
         // Pagination Calculation
 
         const page = request.nextUrl.searchParams.get('page') || 1;
@@ -33,7 +35,7 @@ export async function GET(request) {
                 .skip(skip)
                 .limit(limit)
                 .populate('author', "-user_id") :
-            await Post.find({})
+            await Post.find({ author: author_id })
                 .sort({ '_id': -1, publishedAt: -1 })
                 .skip(skip)
                 .limit(limit)

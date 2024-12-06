@@ -1,9 +1,9 @@
 "use client";
 import { createContext, useState } from "react";
 
-export const PostsContext = createContext();
+export const PostContext = createContext();
 
-export const PostsContextProvider = ({ children }) => {
+export const PostContextProvider = ({ children }) => {
     const [blogposts, setBlogposts] = useState([]);
 
     const [postContent, setPostContent] = useState({
@@ -12,11 +12,11 @@ export const PostsContextProvider = ({ children }) => {
     });
 
     return (
-        <PostsContext.Provider value={{
+        <PostContext.Provider value={{
             blogposts, setBlogposts,
             postContent, setPostContent
         }}>
             {children}
-        </PostsContext.Provider>
+        </PostContext.Provider>
     );
 };

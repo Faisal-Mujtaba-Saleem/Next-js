@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import EditPost from './EditPost'
-import { PostsContext } from '@/contexts/posts-context/context';
+import { PostContext } from '@/contexts/post-context/context';
 import { useSession } from 'next-auth/react';
 
 
 const PostAdminControls = ({ post }) => {
     const { data: session } = useSession();
-    const { setBlogposts } = useContext(PostsContext);
+    const { setBlogposts } = useContext(PostContext);
 
     const handleDelete = async (slug) => {
         try {

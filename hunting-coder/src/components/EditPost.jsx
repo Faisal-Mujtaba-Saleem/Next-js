@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { PostsContext } from '@/contexts/posts-context/context';
+import { PostContext } from '@/contexts/post-context/context';
 import {
     Dialog,
     DialogContent,
@@ -20,8 +20,8 @@ const EditPost = ({ post }) => {
 
     const { data: session } = useSession();
 
-    const { blogposts, setBlogposts } = useContext(PostsContext);
-    const { postContent, setPostContent } = useContext(PostsContext);
+    const { blogposts, setBlogposts } = useContext(PostContext);
+    const { postContent, setPostContent } = useContext(PostContext);
 
     const [editPostForm, setEditPostForm] = useState({ ...post_ });
 

@@ -1,6 +1,6 @@
+import React from 'react'
 import BlogArticle from '@/components/BlogArticle';
 import Loading from '@/components/Loading';
-import React from 'react'
 
 const fetchPost = async (slug) => {
     try {
