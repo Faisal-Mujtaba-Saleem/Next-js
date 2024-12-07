@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthorContext } from "@/contexts/author-context/context";
 import { useSession } from "next-auth/react";
-import { Bounce, toast } from "react-toastify";
+import { toast, Bounce } from "react-toastify";
 import Image from "next/image";
 
 const AuthorProfile = () => {

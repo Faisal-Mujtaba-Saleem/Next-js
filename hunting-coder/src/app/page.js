@@ -30,24 +30,28 @@ export default function Page() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const loadPosts = async () => {
+    fetchPosts()
+      .then((posts) => {
+        if (posts) {
+          setBlogposts(posts);
+        }
+      })
+      .catch((err) => {
+        setError(err.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
   useEffect(() => {
     if (blogposts && !blogpostsSettled) {
       setBlogpostsSettled(true);
 
       setIsLoading(true);
 
-      fetchPosts()
-        .then((posts) => {
-          if (posts) {
-            setBlogposts(posts);
-          }
-        })
-        .catch((err) => {
-          setError(err.message);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+      loadPosts();
     }
   }, [blogposts]);
 

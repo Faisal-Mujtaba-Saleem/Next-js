@@ -1,10 +1,10 @@
+"use client";
 import React from 'react'
-import { Bounce, toast } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 import submitContactAction from '@/app/actions/submitContactAction';
 
 const ContactForm = () => {
     const submitContactActionHandler = async (contact_form) => {
-        "use server"
 
         const res = await submitContactAction(contact_form);
 
@@ -55,7 +55,7 @@ const ContactForm = () => {
                     <input id="email" name="email" type="email" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
                 </div>
                 <div>
-                    <label htmlFor="phone_number" className="block text-sm font-medium">phone_number number</label>
+                    <label htmlFor="phone_number" className="block text-sm font-medium">Phone Number</label>
                     <input id="phone_number" name="phone_number" type="tel" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
                 </div>
                 <div>

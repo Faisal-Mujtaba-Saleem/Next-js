@@ -25,7 +25,7 @@ export default async function submitContactAction(contact_form) {
         };
 
         const sendMail_response = await sendMail(sendMail_options);
-        if (!sendMail_response.success) throw new Error(sendMail_response.error);
+        if (!sendMail_response.success) throw new Error(`Your message was saved, but we couldn't notify the admin due to an email issue. We'll address it soon`);
 
         const replyMail_options = {
             from: process.env.SMTP_USER,
@@ -37,14 +37,14 @@ export default async function submitContactAction(contact_form) {
         };
 
         const replyMail_response = await replyMail(replyMail_options);
+        if (!replyMail_response.success)
+            console.log(`Contact submitted successfully, but failed to send confirmation email to the user. Error: ${replyMail_response.error}`);
 
         return {
             success: true,
             message: "Your message has been sent successfully!",
         };
     } catch (error) {
-        console.log(error.message);
-
         return {
             success: false,
             error: error.message,

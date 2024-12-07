@@ -28,7 +28,6 @@ const DashboardPosts = () => {
 
     const { blogposts, setBlogposts } = useContext(PostContext);
 
-    const [blogpostsMap, setBlogpostsMap] = useState(new Map());
     const [error, setError] = useState(null);
     const [hasMorePosts, setHasMorePosts] = useState(true);
     const [page, setPage] = useState(0);
@@ -50,12 +49,13 @@ const DashboardPosts = () => {
 
             const { posts, total_posts } = await fetchPosts(url, fetch_options);
 
-            posts.some((post) => {
-                console.log(blogpostsMap);
+            setBlogposts((prev_posts) => {
+                const posts_to_set = posts.filter((post) => {
+                    return !blogpostsMap().has(post._id)
+                });
 
-                return !blogpostsMap.has(post._id);
-            }) &&
-                setBlogposts([...blogposts, ...posts]);
+                return [...blogposts, ...posts_to_set];
+            });
 
             const total_pages = Math.ceil(total_posts / page_limit);
 
@@ -69,15 +69,12 @@ const DashboardPosts = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(blogposts);
-        if (!!blogposts.length) {
-            const blogposts_map = new Map(
-                blogposts.map(post => [post._id, post])
-            )
-            setBlogpostsMap(blogposts_map);
-        }
-    }, [blogposts])
+    function blogpostsMap() {
+        const blogposts_map = new Map(
+            blogposts.map(post => [post._id, post])
+        );
+        return blogposts_map;
+    }
 
     // Rendering Portion.
 
@@ -99,6 +96,7 @@ const DashboardPosts = () => {
                                         strings={[session?.user?.name || "Guest"]}
                                         typeSpeed={40}
                                         backSpeed={50}
+                                        backDelay={1500}
                                         loop
                                     />
                                 </span>
@@ -109,7 +107,7 @@ const DashboardPosts = () => {
 
                     <section>
                         {
-                            session?.user ?
+                            session?.user && blogposts ?
                                 <InfiniteScroll
                                     pageStart={page}
                                     loadMore={() => loadPosts(session?.user)}

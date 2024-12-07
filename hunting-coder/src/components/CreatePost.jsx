@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import SignIn from '@/components/SignIn';
 import BlogPostEditor from '@/components/BlogPostEditor';
-import { Bounce, toast } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 import { useSession } from 'next-auth/react';
 import { createPostAction } from '@/app/actions/createPostAction';
 import { PostContext } from '@/contexts/post-context/context';

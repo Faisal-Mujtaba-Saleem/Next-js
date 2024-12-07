@@ -12,7 +12,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Button } from './ui/button';
-import { Bounce, toast } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 import BlogPostEditor from '@/components/BlogPostEditor';
 
 const EditPost = ({ post }) => {

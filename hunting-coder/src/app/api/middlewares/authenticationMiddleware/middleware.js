@@ -13,24 +13,20 @@ export async function apiAuthenticationMiddleware(request) {
         // console.log(request.cookies, { session_token });
 
         if (!session_token) {
-            console.log("No session token found in request headers");
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
         const session = await mongoose.connection.collection('sessions').findOne({ sessionToken: session_token.value });
 
         if (!session) {
-            console.log("No session found");
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
         if (session.expires < Date.now()) {
-            console.log("Session expired");
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
         if (session.userId.toString() !== user_id) {
-            console.log("Unauthorized");
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 

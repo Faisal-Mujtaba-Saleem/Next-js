@@ -1,6 +1,5 @@
 "use client";
 import React, { useContext, useEffect, useState } from 'react'
-import { PostContext } from '@/contexts/post-context/context';
 import AppHeader from '@/components/AppHeader';
 import BlogPost from '@/components/BlogPost';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -28,8 +27,9 @@ const fetchPosts = async (url) => {
 };
 
 const AppBlog = () => {
-    const { blogposts, setBlogposts } = useContext(PostContext);
 
+    const [blogposts, setBlogposts] = useState([]);
+    const [blogpostsMap, setBlogpostsMap] = useState(new Map());
     const [error, setError] = useState(null);
     const [hasMorePosts, setHasMorePosts] = useState(true);
     const [page, setPage] = useState(0);
@@ -40,7 +40,12 @@ const AppBlog = () => {
 
             const { posts, total_posts } = await fetchPosts(`/api/posts/list/?page=${page + 1}&limit=${page_limit}`);
 
-            setBlogposts([...blogposts, ...posts]);
+            posts.some((post) => {
+                console.log(blogpostsMap);
+
+                return !blogpostsMap.has(post._id);
+            }) &&
+                setBlogposts([...blogposts, ...posts]);
 
             const total_pages = Math.ceil(total_posts / page_limit);
 
@@ -54,6 +59,22 @@ const AppBlog = () => {
         }
     }
 
+    useEffect(() => {
+        setBlogposts([]);
+        setPage(0);
+        if (blogposts.length === 0) {
+            loadPosts();
+        }
+    }, []);
+    useEffect(() => {
+        if (!!blogposts.length) {
+            const blogposts_map = new Map(
+                blogposts.map(post => [post._id, post])
+            );
+            setBlogpostsMap(blogposts_map);
+        }
+    }, [blogposts]);
+
     return (
         error ?
             <DisplayError error={error} /> :
@@ -63,7 +84,7 @@ const AppBlog = () => {
                         <AppHeader />
                         <section>
                             {
-                                !!blogposts && !!blogposts?.length ?
+                                !!blogposts ?
                                     <InfiniteScroll
                                         pageStart={page}
                                         loadMore={loadPosts}
